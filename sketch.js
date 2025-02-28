@@ -165,7 +165,7 @@ function draw() {
     else if(check === 1){
      dinoY = 353;
      duckY = 500;
-     check = 0;
+     check = 0; 
     }
   }
   
@@ -207,18 +207,20 @@ function draw() {
 
 //Sets the time
 function Time(t){
-  if(t > 2700){
-    strokeWeight(1);
-    fill("yellow");
-    ellipse(775, 25, 50, 50);
-  }
-
-  if(t < 2701){
-    strokeWeight(0);
-    fill("grey");
-    ellipse(775, 25, 50, 50);
-    fill(255);
-    ellipse(787.5, 25, 50, 50);
+  while(isAlive === 1){
+    if(t > 2700){
+      strokeWeight(1);
+      fill("yellow");
+      ellipse(775, 25, 50, 50);
+    }
+  
+    if(t < 2701){
+      strokeWeight(0);
+      fill("grey");
+      ellipse(775, 25, 50, 50);
+      fill(255);
+      ellipse(787.5, 25, 50, 50);
+    }
   }
 }
 // spawns the cactus
