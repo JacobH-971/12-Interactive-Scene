@@ -68,11 +68,11 @@ function draw() {
 
   //time reset
  if(isAlive === 1){
-  score += 1;
-  time += 1
-  if(time > 5400){
-    time = 0;
-  }
+   score += 1;
+  
+   if(time > 5400){
+      time = 0;
+   }
  }
   // Press R to reset the game if you die
   if (keyIsDown(82)) {
@@ -207,7 +207,8 @@ function draw() {
 
 //Sets the time
 function Time(t){
-  while(isAlive === 1){
+  if(isAlive === 1){
+    time += 1
     if(t > 2700){
       strokeWeight(1);
       fill("yellow");
@@ -221,6 +222,9 @@ function Time(t){
       fill(255);
       ellipse(787.5, 25, 50, 50);
     }
+  }
+  else{
+    background(200, 50, 0);
   }
 }
 // spawns the cactus
