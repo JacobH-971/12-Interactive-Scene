@@ -59,7 +59,7 @@ function draw() {
   rect(cactusX2, cactusY2, 200, 200);
   strokeWeight(2);
   //incrementing speed as you get farther
-  speed = speed + score/500000;
+  speed += score/500000;
 
   //move the pterodactyl if its too close to the cactus
   if(pX > cactusX - 100 && pX < cactusX + 100 || pX > cactusX2 - 100 && pX < cactusX2 + 100){
@@ -78,6 +78,7 @@ function draw() {
   if (keyIsDown(82)) {
     isAlive = 1;
     score = 0;
+    speed = 5;
     cactusX = 850;
     cactusX2 = 1150;
     pX = 850;
@@ -134,10 +135,10 @@ function draw() {
   // text(mouseX + ", " + mouseY, 50, 150);
   text("score " + score, 43, 15);
   text("high score " + hScore, 17, 30);
-
+  strokeWeight(1);
   fill(0,0,0,0);
   rect(400, 390, 850, 30);
-
+  
   //movement/jump     
   if(isAlive === 1){
     if((keyIsPressed && key === "w" && dinoY === 353) || (keyIsPressed && key === UP_ARROW && dinoY === 353)){
@@ -208,7 +209,7 @@ function draw() {
 //Sets the time
 function Time(t){
   if(isAlive === 1){
-    time += 1
+    time += 5;
     if(t > 2700){
       strokeWeight(1);
       fill("yellow");
